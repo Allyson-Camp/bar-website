@@ -11,16 +11,20 @@ window.onload = function () {
         // allows the user to submit the form again and again, and
         // see new results.
         let drinkMenu = document.getElementById("drinks");
-        drinkMenu.setAttribute("class", "hidden");
         let under21Message = document.getElementById("under-21");
-        under21Message.setAttribute("class", "hidden");
-
         // we gather the age value
         const age = parseInt(document.querySelector("input#age").value);
+        
+        //set their attribute to hidden
+        drinkMenu.setAttribute("class", "hidden");
+        under21Message.setAttribute("class", "hidden");
 
         // we check if the age is greater than 21.
         if (age >= 21) {
             drinkMenu.removeAttribute("class");
+            // if its under the else is triggered
+        } else {
+            under21Message.removeAttribute("class");
         }
     };
 };
